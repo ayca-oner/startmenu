@@ -40,7 +40,7 @@ void Button::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     //change color back to dark cyan
     QBrush brush;
     brush.setStyle(Qt::SolidPattern);
-    brush.setColor(Qt::darkCyan);
+    brush.setColor(Qt::white);
     setBrush(brush);
 }
 

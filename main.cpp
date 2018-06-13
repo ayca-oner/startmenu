@@ -4,9 +4,11 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsView>
 #include "game.h"
+#include "secdialog.h"
+#include "highscore.h"
 
 Game* game;
-
+//Highscore* highscore;
 
 
 int main(int argc, char *argv[])
@@ -17,21 +19,11 @@ int main(int argc, char *argv[])
     game->show();
     game->displayMainMenu();
 
-//    // create a scene
 
-//    QGraphicsScene * scene = new QGraphicsScene();
 
-//    //create an item to put into the scene
-//    QGraphicsRectItem * rect = new QGraphicsRectItem();
-//    rect->setRect(0,0,100,100);
-
-//    // add the item into the scene
-//    scene->addItem(rect);
-
-//    // add a view
-//    QGraphicsView * view = new QGraphicsView(scene);
-
-//    view->show();
+//    highscore= new Highscore();
+//    highscore->show();
+//    highscore->displayHighscoreMenu();
 
 
     return a.exec();

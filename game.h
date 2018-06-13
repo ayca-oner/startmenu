@@ -11,14 +11,16 @@ public:
         Game (QWidget* parent=NULL);
 
         //public methods
-        void displayMainMenu();
 
         //public attributes
         QGraphicsScene* scene;
-        // for hewboard HexBoard* hexboard; TODO
 
 public slots:
         void start();
+        void openHighscore();
+        void displayMainMenu();
+        void openSettings();
+
 };
 
 #endif // GAME_H

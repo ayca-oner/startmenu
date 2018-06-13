@@ -26,11 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     game.cpp \
-    button.cpp
+    button.cpp \
+    secdialog.cpp
 
 HEADERS += \
     game.h \
-    button.h
+    button.h \
+    secdialog.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    secdialog.ui
