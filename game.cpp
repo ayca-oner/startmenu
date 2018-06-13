@@ -142,21 +142,21 @@ void Game::displayMainMenu()
     connect(highscoreButton,SIGNAL(clicked()),this,SLOT(openHighscore()));
     scene->addItem(highscoreButton);
 
-    //create the settings button
-    Button* settingsButton = new Button(QString("Settings"));
-    int sxPos = this->width()/2 - settingsButton->boundingRect().width()/2;
-    int syPos = 425;
-    settingsButton->setPos(sxPos,syPos);
-    connect(settingsButton,SIGNAL(clicked()),this,SLOT(openSettings()));
-    scene->addItem(settingsButton);
+//    //create the settings button
+//    Button* settingsButton = new Button(QString("Settings"));
+//    int sxPos = this->width()/2 - settingsButton->boundingRect().width()/2;
+//    int syPos = 425;
+//    settingsButton->setPos(sxPos,syPos);
+//    connect(settingsButton,SIGNAL(clicked()),this,SLOT(openSettings()));
+//    scene->addItem(settingsButton);
 
-    //create the quit button
-     Button* quitButton = new Button(QString("Quit"));
-     int qxPos = this->width()/2 - quitButton->boundingRect().width()/2;
-     int qyPos = 500;
-     quitButton->setPos(qxPos,qyPos);
-     connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
-     scene->addItem(quitButton);
+//    //create the quit button
+//     Button* quitButton = new Button(QString("Quit"));
+//     int qxPos = this->width()/2 - quitButton->boundingRect().width()/2;
+//     int qyPos = 500;
+//     quitButton->setPos(qxPos,qyPos);
+//     connect(quitButton,SIGNAL(clicked()),this,SLOT(close()));
+//     scene->addItem(quitButton);
 
 
 }
