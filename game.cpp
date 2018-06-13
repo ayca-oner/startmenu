@@ -25,6 +25,27 @@ void Game::start(){
 //   TODO;
 }
 
+void Game::openInstructions(){
+
+    scene->clear();
+    QGraphicsTextItem* aText = new QGraphicsTextItem(QString("Instructions"));
+    QFont titleFont("comic sans",20);
+    aText->setFont(titleFont);
+    int txPos = this->width()/2 - aText->boundingRect().width()/2;
+    int tyPos = 100;
+    aText->setPos(txPos,tyPos);
+    scene->addItem(aText);
+
+    //create back to main menu button
+    Button* backButton = new Button(QString("Back to Main Menu"));
+    int bbxPos = this->width()/2 - backButton->boundingRect().width()/2;
+    int bbyPos = 450;
+    backButton->setPos(bbxPos,bbyPos);
+    connect(backButton,SIGNAL(clicked()),this,SLOT(displayMainMenu()));
+    scene->addItem(backButton);
+}
+
+
 void Game::openHighscore(){
 //    secDialog highscoreWindow;
 //    highscoreWindow.setModal(true);
@@ -36,14 +57,14 @@ void Game::openHighscore(){
     QFont titleFont("comic sans",20);
     aText->setFont(titleFont);
     int txPos = this->width()/2 - aText->boundingRect().width()/2;
-    int tyPos = 150;
+    int tyPos = 100;
     aText->setPos(txPos,tyPos);
     scene->addItem(aText);
 
     //create back to main menu button
     Button* backButton = new Button(QString("Back to Main Menu"));
     int bbxPos = this->width()/2 - backButton->boundingRect().width()/2;
-    int bbyPos = 500;
+    int bbyPos = 450;
     backButton->setPos(bbxPos,bbyPos);
     connect(backButton,SIGNAL(clicked()),this,SLOT(displayMainMenu()));
     scene->addItem(backButton);
@@ -56,30 +77,30 @@ void Game::openSettings(){
     QFont titleFont("comic sans",20);
     aText->setFont(titleFont);
     int txPos = this->width()/2 - aText->boundingRect().width()/2;
-    int tyPos = 200;
+    int tyPos = 150;
     aText->setPos(txPos,tyPos);
     scene->addItem(aText);
 
-    //create back to main menu button
+    //create Sounds On/Off button
     Button* soundButton = new Button(QString("Sounds On/Off"));
     int sxPos = this->width()/2 - soundButton->boundingRect().width()/2;
-    int syPos = 275;
+    int syPos = 225;
     soundButton->setPos(sxPos,syPos);
     //connect(soundButton,SIGNAL(clicked()),this,SLOT(displayMainMenu()));
     scene->addItem(soundButton);
 
-    //create back to main menu button
+    //create Music On/Off button
     Button* musicButton = new Button(QString("Music On/Off"));
     int mxPos = this->width()/2 - musicButton->boundingRect().width()/2;
-    int myPos = 350;
+    int myPos = 300;
     musicButton->setPos(mxPos,myPos);
     //connect(musicButton,SIGNAL(clicked()),this,SLOT(displayMainMenu()));
     scene->addItem(musicButton);
 
-    //create back to main menu button
+    //create back to main menu buttonplayButton
     Button* backButton = new Button(QString("Back to Main Menu"));
     int bbxPos = this->width()/2 - backButton->boundingRect().width()/2;
-    int bbyPos = 425;
+    int bbyPos = 375;
     backButton->setPos(bbxPos,bbyPos);
     connect(backButton,SIGNAL(clicked()),this,SLOT(displayMainMenu()));
     scene->addItem(backButton);
@@ -93,17 +114,25 @@ void Game::displayMainMenu()
     QFont titleFont("comic sans",50);
     titleText->setFont(titleFont);
     int txPos = this->width()/2 - titleText->boundingRect().width()/2;
-    int tyPos = 150;
+    int tyPos = 75;
     titleText->setPos(txPos,tyPos);
     scene->addItem(titleText);
 
     //create the play button
     Button* playButton = new Button(QString("Play"));
     int bxPos = this->width()/2 - playButton->boundingRect().width()/2;
-    int byPos = 275;
+    int byPos = 200;
     playButton->setPos(bxPos,byPos);
     //connect(playButton,SIGNAL(clicked()),this,SLOT(start()));  write the star code
     scene->addItem(playButton);
+
+    //Create the instructions button
+    Button* instrButton = new Button(QString("Instructions"));
+    int ixPos = this->width()/2 - instrButton->boundingRect().width()/2;
+    int iyPos = 275;
+    instrButton->setPos(ixPos,iyPos);
+    connect(instrButton,SIGNAL(clicked()),this,SLOT(openInstructions()));
+    scene->addItem(instrButton);
 
     //create the highscore button
     Button* highscoreButton = new Button(QString("Highcore"));

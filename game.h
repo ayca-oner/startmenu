@@ -20,6 +20,7 @@ public slots:
         void openHighscore();
         void displayMainMenu();
         void openSettings();
+        void openInstructions();
 
 };
 
